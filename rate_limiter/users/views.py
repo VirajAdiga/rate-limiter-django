@@ -6,3 +6,8 @@ from django.shortcuts import render
 def greet_user(request):
     username = request.user.username
     return render(request, 'users/hello.html', {'username': username})
+
+
+# Public endpoint
+def greet_public_user(request):
+    return render(request, 'users/hello.html', {'username': 'Public User'})
